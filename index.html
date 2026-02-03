@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itProger Shop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { color: #333; }
+
+        /* Контейнер для карточек */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Позволяет карточкам перепрыгивать на новую строку */
+            justify-content: center;
+            gap: 20px; /* Расстояние между карточками */
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 250px; /* Фиксированная ширина карточки */
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Эффект при наведении */
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 150px;
+            object-fit: cover; /* Чтобы картинка не сплющивалась */
+            background-color: #eee;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover { background-color: #357abd; }
+    </style>
+</head>
+<body>
+
+    <h1>Наши Курсы</h1>
+
+    <div class="container">
+        <!-- Карточка 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com" alt="Python">
+            <h3>Python Middle</h3>
+            <p>Цена: $5.00</p>
+            <button onclick="buy('Python Middle')">Купить</button>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com" alt="JS">
+            <h3>JS Frontend</h3>
+            <p>Цена: $8.00</p>
+            <button onclick="buy('JS Frontend')">Купить</button>
+        </div>
+    </div>
+
+    <script>
+        function buy(name) {
+            alert("Вы выбрали: " + name + "\nВ Telegram откроется оплата.");
+        }
+    </script>
+
+</body>
+</html>
