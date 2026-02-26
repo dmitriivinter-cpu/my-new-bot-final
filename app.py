@@ -30,7 +30,7 @@ def index():
             <h1>🛡️ J.A.R.V.I.S. CORE</h1>
             <p style="color:yellow;">[ SYSTEM: ONLINE | AUTHENTICATED ]</p>
             <hr style="border: 0.5px solid #222;">
-            <a href="/run_nmap"><button class="btn">📡 SCAN NETWORK</button></a>
+            <a href="/run_nmap"><button class="btn">📡 СКАН СЕТИ (МАСКИРОВКА ВКЛ)</button></a>
             <a href="/run_sniffer"><button class="btn">🕵️‍♂️ WEB RECON</button></a>
             <div class="log-window">> Вход в систему подтвержден... > Загрузка протоколов Matrix... > Ожидаю ввода, Сэр.</div>
         </div>
@@ -67,7 +67,7 @@ def index():
 
 @app.route('/run_nmap')
 def run_nmap():
-    res = subprocess.check_output(["nmap", "-F", "192.168.100.1"], stderr=subprocess.STDOUT)
+    res = subprocess.check_output(["nmap", "-F", "192.168.100.141"], stderr=subprocess.STDOUT)
     return f"<body style='background:black;color:#0f0;font-family:monospace;padding:20px;'><h3>📡 SCAN REPORT:</h3><pre>{res.decode('utf-8')}</pre><br><a href='/' style='color:yellow;'>[ BACK TO CORE ]</a></body>"
 
 @app.route('/run_sniffer')
