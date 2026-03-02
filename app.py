@@ -35,6 +35,7 @@ def ai_analyze_report(report_text):
 
 @app.route('/')
 def index():
+    print(f"📡 JARVIS ALERT: {recon_tools.get_time_stamp()} | STATUS: {recon_tools.STATUS}")
     main_color = "#ffff00" if alarm_active else "#00ff41"
     alarm_style = "animation: blink 1s infinite;" if alarm_active else ""
     
@@ -148,7 +149,7 @@ def run_xray():
         res = subprocess.check_output(["nmap", "-sV", "192.168.100.1"], stderr=subprocess.STDOUT)
         report = res.decode('utf-8')
         advice = ai_analyze_report(report)
-        send_telegram(f"🧠 AI ANALYSIS:\\n{{advice}}")
+        send_telegram(f"🧠 AI ANALYSIS:\n{advice}")
         return f"<body style='background:black;color:cyan;padding:20px;font-family:monospace;'><h3>🧠 AI ANALYSIS:</h3><pre>{{advice}}</pre><hr><pre>{{report}}</pre><br><a href='/' style='color:yellow;'>НАЗАД</a></body>"
     except Exception as e: return f"<h3>ERROR: {{e}}</h3>"
 
