@@ -1,12 +1,15 @@
 from flask import Flask, render_template_string
+import recon_tools  # МЫ ПОДКЛЮЧИЛИ НАШ МОДУЛЬ!
 import subprocess
 import requests
 
 app = Flask(__name__)
 
 # --- [ КОНФИГУРАЦИЯ J.A.R.V.I.S. ] ---
-TOKEN = "8509780467:AAEUm13wvtANYCAxzIxR_9OpRBPRMz4Mm50"
+TOKEN = "8509780467:AAHBc_IkTBKWOHGPaVJnM00rnl57MiBEhfs"
 CHAT_ID = "1421473166"
+print(f"--- SYSTEM STATUS: {recon_tools.STATUS} ---")
+recon_tools.scan_log("192.168.100.1", 53)
 
 alarm_active = False
 
