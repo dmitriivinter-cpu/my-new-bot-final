@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S. Net-Analyzer</title>
+    <style>
+        /* СТИЛЬ МАТРИЦЫ И ТЕМНОЙ ПАНЕЛИ */
+        body {
+            background-color: #050505; /* Глубокий черный */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+
+        /* ЭФФЕКТ СВЕЧЕНИЯ ФОНА (МАТРИЦА) */
+        body::before {
+            content: "101011001010101101";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            color: rgba(0, 255, 65, 0.05); /* Тусклый зеленый */
+            font-size: 10px;
+            word-break: break-all;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* КАРТОЧКА ИЗ УРОКА (МОДЕРНИЗИРОВАННАЯ) */
+        .card {
+            background: rgba(10, 10, 10, 0.9); /* Полупрозрачный черный */
+            border: 1px solid #00ff41; /* Неоновая рамка */
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); /* Зеленое свечение */
+            width: 90%;
+            max-width: 340px;
+            text-align: center;
+            backdrop-filter: blur(5px); /* Эффект стекла */
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        p {
+            color: #88ff88;
+            font-size: 14px;
+            line-height: 1.8;
+            text-align: left;
+            border-left: 2px solid #00ff41;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+
+        /* КНОПКА "ОПТИМИЗИРОВАТЬ" */
+        button {
+            background: transparent;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 15px #00ff41;
+            transform: scale(1.02);
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #00ff41;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            box-shadow: 0 0 8px #00ff41;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="stealth_trigger">System Analyzer</h1>
+        <p>
+            <span class="status-dot"></span> NODE: HUAWEI_GATEWAY<br>
+            📡 PING: 22 ms<br>
+            ⚡ SPEED: 144 Mbps<br>
+            🔒 ENC: AES-256 ACTIVE
+        </p>
+        <button id="opt_btn">START OPTIMIZATION</button>
+    </div>
+
+</body>
+</html>
